@@ -27,13 +27,49 @@ public class Endereco {
 	}
 	//metodos
 	public Endereco cria() {
-		String rua;
-		String cep;
-		String cidade;
-		String estado;
+		Leitura ler = new Leitura();
+		
+		String rua, cep, cidade, estado;
 		int numero;
+		
+		rua = ler.lerString();
+		cep = ler.lerString();
+		cidade = ler.lerString();
+		estado = ler.lerString();
+		numero = ler.lerInt();
 		
 		Endereco end = new Endereco(rua, numero, cep, cidade, estado);
 		return end;
+	}
+	//gets e sets
+	public String getRua() {
+		return this.rua;
+	}
+	public void setRua(String rua) {
+		this.rua = rua;
+	}
+	public int getNumero() {
+		return this.numero;
+	}
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+	public String getCEP() {
+		return this.cep;
+	}
+	public void setCEP(String cep) {
+		this.cep = cep;
+	}
+	public String getCidade() {
+		return this.cidade;
+	}
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+	public String getEstado() {
+		return this.estado;
+	}
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 }
