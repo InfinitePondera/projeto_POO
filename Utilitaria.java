@@ -1,14 +1,14 @@
 package projetofinal;
 import java.util.InputMismatchException;
 
-public class Utilitaria {
+public static class Utilitaria {
     //atributos
-    public static double custoKmExtra = 1.20;
-    public static double custoGuia = 250.00;
-    public static int IdVeiculo;
-    public static int IdLocacao;
+    public double custoKmExtra = 1.20;
+    public double custoGuia = 250.00;
+    public int IdVeiculo;
+    public int IdLocacao;
     //metodos
-    public static bool validarCep(String cep) {
+    public bool validarCep(String cep) {
         if (cep.Length == 8)
         {
             cep = cep.Substring(0, 5) + "-" + cep.Substring(5, 3);
@@ -17,7 +17,7 @@ public class Utilitaria {
         return System.Text.RegularExpressions.Regex.IsMatch(cep, ("[0-9]{5}-[0-9]{3}"));
     }
 
-    public static boolean validarCpf(String cpf) {
+    public boolean validarCpf(String cpf) {
         // considera-se erro CPF's formados por uma sequencia de numeros iguais
         if (cpfPessoa.equals("00000000000") || cpfPessoa.equals("11111111111") || cpfPessoa.equals("22222222222")
                 || cpfPessoa.equals("33333333333") || cpfPessoa.equals("44444444444") || cpfPessoa.equals("55555555555")
@@ -72,7 +72,7 @@ public class Utilitaria {
             return (false);
         }
     }
-    public static boolean validarCNPJ(String CNPJ) {
+    public boolean validarCNPJ(String CNPJ) {
         // considera-se erro CNPJ's formados por uma sequencia de numeros iguais
             if (CNPJ.equals("00000000000000") || CNPJ.equals("11111111111111") ||
                 CNPJ.equals("22222222222222") || CNPJ.equals("33333333333333") ||
@@ -131,7 +131,7 @@ public class Utilitaria {
             }
           }
 
-    public static boolean validarEstado(String estado) {
+    public boolean validarEstado(String estado) {
         int i;
 
         String vet[] = { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR",
