@@ -24,7 +24,7 @@ public class ClientePJ extends Cliente {
         this.nomeMotorista = nomeMotorista;
     }
     //metodos
-    public static ClientePJ cria() {
+    public static ClientePJ criar() {
         
         String nome, fone, cnpj, nomeMotorista;
         Endereco end;
@@ -32,7 +32,7 @@ public class ClientePJ extends Cliente {
         nome = Leitura.lerString();
         fone = Leitura.lerString();
         cnpj = Leitura.lerString();
-        end = Endereco.cria();
+        end = Endereco.criar();
         nomeMotorista = Leitura.lerString();
 
         ClientePJ clipj = new ClientePJ(nome, fone, end, cnpj, nomeMotorista);
