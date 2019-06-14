@@ -13,7 +13,20 @@ public class Utilitario extends Veiculo
         this.capacidadeCarga = capCarga;
         this.nroEixos = nEixos;       
      }
-
+     //
+     public int getCapacidadeCarga(){
+         return this.capacidadeCarga;
+     }
+     public void setCapacidadeCarga(int capacidadeCarga){
+        this.capacidadeCarga = capacidadeCarga;
+     }
+     public int getNroEixos(){
+         return this.nroEixos;
+     }
+     public void setNroEixos(int nroEixos){
+         this.nroEixos = nroEixos;
+     }
+     //
      public static Utilitario criar(String placa, string cor, int nroPortas, char combtipo, long km, double valorDiaria, int capCarga, int nEixos)
      {
          Utilitario util = new Utilitario(placa, cor, nroPortas, combtipo, km, valorDiaria, capCarga, nEixos);
