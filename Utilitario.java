@@ -7,15 +7,16 @@ public class Utilitario extends Veiculo
 
      //
 
-     public Utilitario(String placa, string cor, int nroPortas, char combtipo, long km, double valorDiaria, int capCarga, int nEixos)
+     public Utilitario(String placa, String cor, int nroPortas, char combtipo, long km, double valorDiaria, int capCarga, int nEixos)
      {
-        super(placa,cor,nroPortas, combtipo, km, valorDiaria)
+        super(placa,cor,nroPortas, combtipo, km, valorDiaria);
         this.capacidadeCarga = capCarga;
         this.nroEixos = nEixos;       
      }
 
-     public static Utilitario criar()
+     public static Utilitario criar(String placa, string cor, int nroPortas, char combtipo, long km, double valorDiaria, int capCarga, int nEixos)
      {
-         Utilitario util = new Utilitario();
+         Utilitario util = new Utilitario(placa, cor, nroPortas, combtipo, km, valorDiaria, capCarga, nEixos);
+         return util;
      }
 }
