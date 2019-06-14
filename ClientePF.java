@@ -16,7 +16,7 @@ public class ClientePF extends Cliente {
         this.cpf = cpf;
     }
     //metodos
-    public static ClientePF cria() {
+    public static ClientePF criar() {
         
         String nome, fone, cpf;
         Endereco end;
@@ -24,7 +24,7 @@ public class ClientePF extends Cliente {
         nome = Leitura.lerString();
         fone = Leitura.lerString();
         cpf = Leitura.lerString();
-        end = Endereco.cria();
+        end = Endereco.criar();
 
         ClientePF clipf = new ClientePF(nome, fone, end, cpf);
         return clipf;
