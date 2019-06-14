@@ -1,9 +1,12 @@
 package projetofinal;
-
 import java.util.InputMismatchException;
 
 public class Utilitaria {
-    
+    //atributos
+    public static double custoKmExtra = 1.20;
+    public static double custoGuia = 250.00;
+    public static int IdVeiculo;
+    public static int IdLocacao;
     //metodos
     public static bool validarCep(String cep) {
         if (cep.Length == 8)
