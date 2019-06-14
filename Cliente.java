@@ -18,7 +18,7 @@ public class Cliente {
         this.endereco = end;
     }
 
-    // metodos
+    // gets e sets
     public String getNome() {
         return this.nome;
     }
