@@ -1,4 +1,4 @@
-package Poo1;
+package projetofinal;
 
 public class Endereco {
 
