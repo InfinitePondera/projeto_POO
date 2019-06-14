@@ -81,7 +81,7 @@ public class Endereco {
     }
     
     // metodos
-    public static Endereco criar() {
+    public static Endereco cria() {
         
         String rua, cep, cidade, estado;
         int numero;
