@@ -23,7 +23,49 @@ public class Veiculo
         this.quilometragem = kmrodados;
         this.valorDiaria = valordiaria;
     }
-
+    //get set
+    public int getVeiculoID(){
+        return this.veiculoID;
+    }
+    public void setVeiculoID(int veiculoID){
+        this.veiculoID = veiculoID;
+    }
+    public String getPlaca(){
+        return this.placa;
+    }
+    public void setPlaca(String placa){
+        this.placa = placa;
+    }
+    public String getCor(){
+        return this.cor;
+    }
+    public void setCor(String cor){
+        this.cor = cor;
+    }
+    public int getNroPortas(){
+        return this.nroPortas;
+    }
+    public void setNroPortas(int nroPortas){
+        this.nroPortas = nroPortas;
+    }
+    public char getTipoCombustivel(){
+        return this.tipoCombustivel;
+    }
+    public void setTipoCombustivel(char tipoCombustivel){
+        this.tipoCombustivel = tipoCombustivel;
+    }
+    public long getQuilometragem(){
+        return this.quilometragem;
+    }
+    public void setQuilometragem(long quilometragem){
+        this.quilometragem = quilometragem;
+    }
+    public double getValorDiaria(){
+        return this.valorDiaria;
+    }
+    public void setValorDiaria(double valordiaria){
+        this.valorDiaria = valordiaria;
+    }
     //metodos
 
     public double calculaCustos(int dias, long km)
