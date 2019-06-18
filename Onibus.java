@@ -41,4 +41,25 @@ public class Onibus extends Veiculo
         Onibus onibus = new Onibus(placa, cor, nroPortas, combtipo, km, valorDiaria, npassag, vlseguro, guia);
         return onibus;
     }
+    public double calculaCustos(int dias, long km)
+    {
+        double custo;
+        int diferenca;
+
+        diferenca = km - (dias * 100);         
+        custo = valorDiaria * dias;
+
+        if(diferenca>0)
+        {
+            for(int i = 0;i<diferenca;i++)
+            {
+                custo += Utilitaria.custoKmExtra; 
+            }
+        }
+
+        custo = vlSeguroPassageiro * nroPassageiros;
+        custo = Utilitaria.custoGuia * dias;
+
+        return custo;
+    }
 }
