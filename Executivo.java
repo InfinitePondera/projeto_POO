@@ -22,4 +22,13 @@ public class Executivo extends Automovel
         Executivo exec = new Executivo(placa, cor, nroPortas, combtipo, km, valorDiaria,vlpopc);
         return exec;
     }
+
+    public double calculaCustos(int dias, long km)
+    {
+        double custo;
+
+        custo = (valorDiaria * dias) + vlOpcionais;
+
+        return custo;
+    }
 }
