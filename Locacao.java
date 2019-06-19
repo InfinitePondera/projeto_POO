@@ -1,5 +1,8 @@
 package projetofinal;
 
+import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
+
 public class Locacao
 {
     //atributos
@@ -41,18 +44,35 @@ public class Locacao
 
     public static void listar(Locacao[] listLoc)
     {
-        system.out.println("locado: ", listLoc[]);
+        for(int i = 0; i < listLoc.length; i++)
+        {
+            System.out.println(listLoc[i]);
+        }
     }
     public double calculaLocacao()
     {
-        return veiculo.veicalculaCustos();
+        int dias;
+        double custo;
+        long km;
+        dias = ChronoUnit.DAYS.between(dtLocacao.toInstant(), dtDevolucao.toInstant());
+        km = kmDevolucao - kmLocacao;        
+
+        custo = veiculo.calculaCustos(dias,km) + valorLocacao + valorCaucao;    
+        
+        return custo;
     }
     public boolean pagar()
     {
-
+        if(paga == false)
+        {
+            paga = true;
+            return paga;
+        }
+        else
+        {
+            return paga;
+        }
     }
-
-    //gets-sets
 
 
 
