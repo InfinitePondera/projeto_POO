@@ -33,7 +33,73 @@ public class Locacao
         valorLocacao = vlloc;
         paga = pg;
     }
-
+    //gets sets
+    public int getLocacaoID(){
+        return this.locacaoID;
+    }
+    public void setLocacaoID(int locacaoID){
+        this.locacaoID = locacaoID;
+    }
+    public Cliente getCliente(){
+        return this.cliente;
+    }
+    public void setCliente(Cliente cliente){
+        this.cliente = cliente;
+    }
+    public Veiculo getVeiculo(){
+        return this.veiculo;
+    }
+    public void setVeiculo(Veiculo veiculo){
+        this.veiculo = veiculo;
+    }
+    public Calendar getDtLocacao(){
+        return this.dtDevolucao;
+    }
+    public void setDtLocacao(Calendar dtLocacao){
+        this.dtLocacao = dtLocacao;
+    }
+    public Calendar getDtDevolucaoPrevista(){
+        return this.dtDevolucaoPrevista;
+    }
+    public void setDtDevolucaoPrevista(Calendar dtDevolucaoPrevista){
+        this.dtDevolucaoPrevista = dtDevolucaoPrevista;
+    }
+    public Calendar getDtDevolucao(){
+        return this.dtDevolucao;
+    }
+    public void setDtDevolucao(Calendar dtDevolucao){
+        this.dtDevolucao = dtDevolucao;
+    }
+    public long getKmLocacao(){
+        return this.kmLocacao;
+    }
+    public void setKmLocacao(long kmLocacao){
+        this.kmLocacao = kmLocacao;
+    }
+    public long getKmDevolucao(){
+        return this.kmDevolucao;
+    }
+    public void setKmDevolucao(long kmDevolucao){
+        this.kmDevolucao = kmDevolucao;
+    }
+    public double getValorCaucao(){
+        return this.valorCaucao;
+    }
+    public void setValorCaucao(double valorCaucao){
+        this.valorCaucao = valorCaucao;
+    }
+    public double getValorLocacao(){
+        return this.valorLocacao;
+    }
+    public void setValorLocacao(double valorLocacao){
+        this.valorLocacao = valorLocacao;
+    }
+    public boolean getPaga(){
+        return this.paga;
+    }
+    public void setPaga(boolean paga){
+        this.paga = paga;
+    }
     //metodos
 
     public static Locacao cria()
