@@ -19,7 +19,7 @@ public class Locacao
     private boolean paga; 
 
     //construtor
-    public Locacao(int locId, Cliente client, Veiculo veic, Calendar dtsaida, Calendar dtvoltaprev, Calendar dtvolta, Long kmsaida, Long kmvolta, double vlcaucao, double vlloc, boolean pg)
+    public Locacao(int locId, Cliente client, Veiculo veic, Calendar dtsaida, Calendar dtvoltaprev, Calendar dtvolta, Long kmsaida, Long kmvolta, double vlcaucao, double vlloc)
     {
         locacaoID = locId;
         cliente = client;
@@ -31,7 +31,6 @@ public class Locacao
         kmDevolucao = kmvolta;
         valorCaucao = vlcaucao;
         valorLocacao = vlloc;
-        paga = pg;
     }
     //gets sets
     public int getLocacaoID(){
@@ -98,7 +97,7 @@ public class Locacao
         return this.paga;
     }
     public void setPaga(boolean paga){
-        this.paga = paga;
+        this.paga = false;
     }
     //metodos
 
