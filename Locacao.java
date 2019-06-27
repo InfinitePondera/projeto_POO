@@ -2,6 +2,7 @@ package projetofinal;
 
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
+import java.util.Scanner;
 
 public class Locacao
 {
@@ -103,7 +104,64 @@ public class Locacao
 
     public static Locacao cria()
     {
-        Locacao loc = new Locacao();
+        int locId;
+        Cliente client;
+        Veiculo veic;
+        Calendar dtsaida;
+        Calendar dtvoltaprev;
+        Calendar dtvolta;
+        Long kmsaida;
+        Long kmvolta; 
+        double vlcaucao;
+        double vlloc;
+        int C;
+        
+        Scanner ler = new Scanner(System.in);
+
+        locId = Leitura.LerInt();
+        C = Leitura.LerInt();
+
+        switch(C)
+        {
+            case 1:
+                client = ClientePF.criar();
+                break;
+            case 2:
+                client = ClientePJ.criar();
+
+        };
+        System.out.printf("\n - Digite o tipo de carro desejado:\n");
+		System.out.printf("1 para Utilitario\n");
+		System.out.printf("2 para Onibus\n");
+		System.out.printf("3 para Automovel\n");
+        System.out.printf("4 para Executivo\n");
+
+        int tipo = Leitura.LerInt();
+
+        switch(tipo)
+        {
+            case 1:
+                veic = Uilitario.criar();
+                break;
+            case 2:
+                veic = Onibus.criar();
+                break;
+            case 3:
+                veic = Automovel.criar();
+                break;
+            case 4:
+                veic = Executivo.criar();
+        };
+
+        dtsaida = Calendar.getInstance(); 
+        dtvoltaprev = dtvoltaprev.add(DATE, Leitura.LerInt());;
+        dtvolta = Calendar.getInstance();
+        kmsaida = ler.nextLong();
+        kmvolta = ler.nextLong();
+        vlcaucao = Leitura.LerDouble();
+        vlloc = Leitura.LerDouble();
+
+        Locacao loc = new Locacao(locId, client, veic, dtsaida, dtvoltaprev, dtvolta, kmsaida, kmvolta, vlcaucao, vlloc);
         return loc;
     }
 
@@ -111,7 +169,7 @@ public class Locacao
     {
         for(int i = 0; i < listLoc.length; i++)
         {
-            System.out.println(listLoc[i]);
+            System.out.println(listLoc[i].toString() + "\n\n");
         }
     }
     public double calculaLocacao()
@@ -138,7 +196,5 @@ public class Locacao
             return paga;
         }
     }
-
-
 
 }
