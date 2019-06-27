@@ -36,8 +36,21 @@ public class Onibus extends Veiculo
         this.guia = guia;
     }
     //
-    public static Onibus criar(String placa, String cor, int nroPortas, char combtipo, long km, double valorDiaria, int npassag, int vlseguro, boolean guia)
+    public static Onibus criar()
     {
+        String placa, String cor, int nroPortas, char combtipo, long km, double valorDiaria, int npassag, int vlseguro, boolean guia;
+        
+        Scanner entrada = new Scanner(System.in);
+        placa = leitura.lerString;
+        cor = leitura.lerString;
+        nroPortas = leitura.lerInt;
+        combtipo = entrada.next().charAt(0);
+        km = entrada.nextLong;
+        valorDiaria = leitura.lerDouble;
+        npassag = leitura.lerInt;
+        vlseguro = leitura.lerInt;
+        guia = ????;
+
         Onibus onibus = new Onibus(placa, cor, nroPortas, combtipo, km, valorDiaria, npassag, vlseguro, guia);
         return onibus;
     }
@@ -63,3 +76,4 @@ public class Onibus extends Veiculo
         return custo;
     }
 }
+
