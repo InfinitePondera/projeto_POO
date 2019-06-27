@@ -17,8 +17,16 @@ public class Executivo extends Automovel
         this.vlOpcionais = vlopc;   
     }
 
-    public static Executivo criar(String placa, String cor, int nroPortas, char combtipo, long km, double valorDiaria, double vlopc)
+    public static Executivo criar()
     {
+        String placa;
+        String cor; 
+        int nroPortas;
+        char combtipo; 
+        long km; 
+        double valorDiaria; 
+        double vlopc;
+        
         Scanner entrada = new Scanner(System.in);
         placa = leitura.lerString;
         cor = leitura.lerString;
