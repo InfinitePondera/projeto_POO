@@ -27,9 +27,29 @@ public class Utilitario extends Veiculo
          this.nroEixos = nroEixos;
      }
      //
-     public static Utilitario criar(String placa, string cor, int nroPortas, char combtipo, long km, double valorDiaria, int capCarga, int nEixos)
+     public static Utilitario criar()
      {
+         Scanner entrada = new Scanner(System.in);
+         String placa;
+         String cor;
+         int nroPortas;
+         char combtipo; 
+         long km;
+         double valorDiaria; 
+         int capCarga;
+         int nEixos;
+         
+         placa = leitura.lerString;
+         cor = leitura.lerString;
+         nroPortas = leitura.lerInt;
+         combtipo = entrada.next().charAt(0);
+         km = entrada.nextLong();
+         valorDiaria = leitura.lerDouble;
+         capCarga = leitura.lerInt;
+         nEixos = leitura.lerInt;
+
          Utilitario util = new Utilitario(placa, cor, nroPortas, combtipo, km, valorDiaria, capCarga, nEixos);
          return util;
      }
 }
+
