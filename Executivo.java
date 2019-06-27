@@ -19,6 +19,14 @@ public class Executivo extends Automovel
 
     public static Executivo criar(String placa, String cor, int nroPortas, char combtipo, long km, double valorDiaria, double vlopc)
     {
+        Scanner entrada = new Scanner(System.in);
+        placa = leitura.lerString;
+        cor = leitura.lerString;
+        nroPortas = leitura.lerInt;
+        combtipo = entrada.next().charAt(0);
+        long = entrada.nextLong();
+        valorDiaria = leitura.lerDouble;
+        vlopc = leitura.lerDouble;
         Executivo exec = new Executivo(placa, cor, nroPortas, combtipo, km, valorDiaria,vlpopc);
         return exec;
     }
