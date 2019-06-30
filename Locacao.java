@@ -102,7 +102,7 @@ public class Locacao
     }
     //metodos
 
-    public static Locacao cria()
+    public static Locacao criar()
     {
         int locId;
         Cliente client;
