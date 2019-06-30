@@ -1,7 +1,7 @@
 package projetofinal;
 
 public class Cliente {
-    
+
     // atributos
     private String nome;
     private String fone;
@@ -40,8 +40,12 @@ public class Cliente {
     }
 
     public void setEndereco(Endereco end) {
-        this.endereco = end; 
+        this.endereco = end;
     }
 
+    //
+    public String toString() {
+        return this.nome + "|" + this.fone + "|" + this.endereco;
+    }
 
 }
