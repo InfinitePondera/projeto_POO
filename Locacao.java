@@ -130,7 +130,7 @@ public class Locacao
             case 2:
                 client = ClientePJ.criar();
 
-        };
+        }
         	System.out.printf("\n - Digite o tipo de carro desejado:\n");
 		System.out.printf("1 para Utilitario\n");
 		System.out.printf("2 para Onibus\n");
@@ -152,7 +152,7 @@ public class Locacao
                 break;
             case 4:
                 veic = Executivo.criar();
-        };
+        }
 
         dtsaida = Calendar.getInstance(); 
         dtvoltaprev = dtvoltaprev.add(DATE, Leitura.LerInt());;
