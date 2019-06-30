@@ -49,7 +49,7 @@ public class Onibus extends Veiculo
         valorDiaria = leitura.lerDouble;
         npassag = leitura.lerInt;
         vlseguro = leitura.lerInt;
-        guia = ????;
+        guia = true;
 
         Onibus onibus = new Onibus(placa, cor, nroPortas, combtipo, km, valorDiaria, npassag, vlseguro, guia);
         return onibus;
