@@ -73,7 +73,7 @@ public class Main
                 break;
             case 5:
                 
-                Locacao.Listar(loc);
+                Locacao.listar(loc);
                     
                 break;
                     
