@@ -1,31 +1,37 @@
 package projetofinal;
 
 public class ClientePJ extends Cliente {
-    //atributos
+    // atributos
     private String cnpj;
     private String nomeMotorista;
-    //Construtor
+
+    // Construtor
     public ClientePJ(String nome, String fone, Endereco end, String cnpj, String nomeMotorista) {
         super(nome, fone, end);
         this.cnpj = cnpj;
         this.nomeMotorista = nomeMotorista;
     }
-    //get set
-    public String getCNPJ(){
+
+    // get set
+    public String getCNPJ() {
         return cnpj;
     }
-    public void setCNPJ(String cnpj){
+
+    public void setCNPJ(String cnpj) {
         this.cnpj = cnpj;
     }
-    public String getNomeMotorista(){
+
+    public String getNomeMotorista() {
         return nomeMotorista;
     }
-    public void setNomeMotorista(String nomeMotorista){
+
+    public void setNomeMotorista(String nomeMotorista) {
         this.nomeMotorista = nomeMotorista;
     }
-    //metodos
+
+    // metodos
     public static ClientePJ criar() {
-        
+
         String nome, fone, cnpj, nomeMotorista;
         Endereco end;
 
@@ -37,5 +43,11 @@ public class ClientePJ extends Cliente {
 
         ClientePJ clipj = new ClientePJ(nome, fone, end, cnpj, nomeMotorista);
         return clipj;
+    }
+
+    //
+    public String toString() {
+        return super.getNome() + "|" + super.getFone() + "|" + super.getEndereco() + "|" + this.cnpj + "|"
+                + this.nomeMotorista;
     }
 }
