@@ -119,6 +119,9 @@ public class Locacao
         Scanner ler = new Scanner(System.in);
 
         locId = Leitura.LerInt();
+	    
+	System.out.printf("\n - Digite o tipo de cliente a ser cadastrado:\n");
+	    
         C = Leitura.LerInt();
 
         switch(C)
@@ -130,11 +133,11 @@ public class Locacao
                 client = ClientePJ.criar();
 
         };
-        System.out.printf("\n - Digite o tipo de carro desejado:\n");
+        	System.out.printf("\n - Digite o tipo de carro desejado:\n");
 		System.out.printf("1 para Utilitario\n");
 		System.out.printf("2 para Onibus\n");
 		System.out.printf("3 para Automovel\n");
-        System.out.printf("4 para Executivo\n");
+        	System.out.printf("4 para Executivo\n");
 
         int tipo = Leitura.LerInt();
 
