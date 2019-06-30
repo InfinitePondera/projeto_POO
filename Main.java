@@ -30,7 +30,7 @@ public class Main
 
                 for(int i = 0; i< Lcount;i++)
                 {
-                    loc[i].criar();
+                    loc[i] = Locacao.criar();
                 }
                 break;
 
