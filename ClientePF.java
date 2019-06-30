@@ -1,23 +1,27 @@
 package projetofinal;
 
 public class ClientePF extends Cliente {
-    //atributos
+    // atributos
     private String cpf;
-    //Construtor
+
+    // Construtor
     public ClientePF(String nome, String fone, Endereco end, String cpf) {
         super(nome, fone, end);
         this.cpf = cpf;
     }
-    //get set
-    public String getCPF(){
+
+    // get set
+    public String getCPF() {
         return cpf;
     }
-    public void setCPF(String cpf){
+
+    public void setCPF(String cpf) {
         this.cpf = cpf;
     }
-    //metodos
+
+    // metodos
     public static ClientePF criar() {
-        
+
         String nome, fone, cpf;
         Endereco end;
 
@@ -28,5 +32,9 @@ public class ClientePF extends Cliente {
 
         ClientePF clipf = new ClientePF(nome, fone, end, cpf);
         return clipf;
+    }
+
+    public String toString() {
+        return super.getNome() + "|" + super.getFone() + "|" + super.getEndereco() + "|" + this.cpf;
     }
 }
