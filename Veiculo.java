@@ -16,6 +16,8 @@ public class Veiculo
 
     public Veiculo(String placa, String cor, int nportas, char combustivel, long kmrodados, double valordiaria)
     {
+        this.veiculoID = Utilitaria.idVeiculo;
+        Utilitaria.idVeiculo++;
         this.placa = placa;
         this.cor = cor;
         this.nroPortas = nportas;
