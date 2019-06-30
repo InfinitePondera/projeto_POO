@@ -20,9 +20,10 @@ public class Locacao
     private boolean paga; 
 
     //construtor
-    public Locacao(int locId, Cliente client, Veiculo veic, Calendar dtsaida, Calendar dtvoltaprev, Calendar dtvolta, Long kmsaida, Long kmvolta, double vlcaucao, double vlloc)
+    public Locacao(Cliente client, Veiculo veic, Calendar dtsaida, Calendar dtvoltaprev, Calendar dtvolta, Long kmsaida, Long kmvolta, double vlcaucao, double vlloc)
     {
-        locacaoID = locId;
+        locacaoID = Utilitaria.idLocacao;
+	Utilitaria.idLocacao++;
         cliente = client;
         veiculo = veic;
         dtLocacao = dtsaida; 
@@ -104,7 +105,6 @@ public class Locacao
 
     public static Locacao criar()
     {
-        int locId;
         Cliente client;
         Veiculo veic;
         Calendar dtsaida;
@@ -118,9 +118,7 @@ public class Locacao
         
         Scanner ler = new Scanner(System.in);
 
-        locId = Leitura.LerInt();
-	    
-	System.out.printf("\n - Digite o tipo de cliente a ser cadastrado:\n");
+       	System.out.printf("\n - Digite o tipo de cliente a ser cadastrado:\n");
 	    
         C = Leitura.LerInt();
 
@@ -164,7 +162,7 @@ public class Locacao
         vlcaucao = Leitura.LerDouble();
         vlloc = Leitura.LerDouble();
 
-        Locacao loc = new Locacao(locId, client, veic, dtsaida, dtvoltaprev, dtvolta, kmsaida, kmvolta, vlcaucao, vlloc);
+        Locacao loc = new Locacao(client, veic, dtsaida, dtvoltaprev, dtvolta, kmsaida, kmvolta, vlcaucao, vlloc);
         return loc;
     }
 
