@@ -175,6 +175,7 @@ public class Locacao {
 
         dtsaida = Calendar.getInstance();
         //------------------
+        System.out.println("\n Digite a data prevista de devolução(ddMMyyyy): ");
         String dtPrev = Leitura.lerString();
 
         int dia, mes, ano;
@@ -228,9 +229,13 @@ public class Locacao {
         }
         //--------------
         dtvolta = Calendar.getInstance();
+        System.out.println("\n Digite a quilometragem de saída do veículo: ");
         kmsaida = ler.nextLong();
+        System.out.println("\n Digite a quilometragem de volta do veículo: ");
         kmvolta = ler.nextLong();
+        System.out.println("\n Digite o valor do caução: ");
         vlcaucao = Leitura.lerDouble();
+        System.out.println("\n Digite o valor da locação: ");
         vlloc = Leitura.lerDouble();
         client = new Cliente("", null);
         veic = new Veiculo("", "", 0, ' ', 0, 0);
