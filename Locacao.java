@@ -12,25 +12,26 @@ public class Locacao {
     private Calendar dtLocacao;
     private Calendar dtDevolucaoPrevista;
     private Calendar dtDevolucao;
-    private Long kmLocacao;
-    private Long kmDevolucao;
+    private long kmLocacao;
+    private long kmDevolucao;
     private double valorCaucao;
     private double valorLocacao;
     private boolean paga;
 
     // construtor
-    public Locacao(int locId, Cliente client, Veiculo veic, Calendar dtsaida, Calendar dtvoltaprev, Calendar dtvolta,
+    public Locacao(Cliente client, Veiculo veic, Calendar dtsaida, Calendar dtvoltaprev, Calendar dtvolta,
             Long kmsaida, Long kmvolta, double vlcaucao, double vlloc) {
-        locacaoID = locId;
-        cliente = client;
-        veiculo = veic;
-        dtLocacao = dtsaida;
-        dtDevolucaoPrevista = dtvoltaprev;
-        dtDevolucao = dtvolta;
-        kmLocacao = kmsaida;
-        kmDevolucao = kmvolta;
-        valorCaucao = vlcaucao;
-        valorLocacao = vlloc;
+        this.locacaoID = Utilitaria.IdLocacao;
+        Utilitaria.IdLocacao++;
+        this.cliente = client;
+        this.veiculo = veic;
+        this.dtLocacao = dtsaida;
+        this.dtDevolucaoPrevista = dtvoltaprev;
+        this.dtDevolucao = dtvolta;
+        this.kmLocacao = kmsaida;
+        this.kmDevolucao = kmvolta;
+        this.valorCaucao = vlcaucao;
+        this.valorLocacao = vlloc;
     }
 
     // gets sets
@@ -123,8 +124,7 @@ public class Locacao {
     }
     // metodos
 
-    public static Locacao cria() {
-        int locId;
+    public static Locacao criar() {
         Cliente client;
         Veiculo veic;
         Calendar dtsaida;
@@ -138,11 +138,9 @@ public class Locacao {
 
         Scanner ler = new Scanner(System.in);
 
-        locId = Leitura.LerInt();
-
         System.out.printf("\n - Digite o tipo de cliente a ser cadastrado:\n");
 
-        C = Leitura.LerInt();
+        C = Leitura.lerInt();
 
         switch (C) {
         case 1:
@@ -159,11 +157,11 @@ public class Locacao {
         System.out.printf("3 para Automovel\n");
         System.out.printf("4 para Executivo\n");
 
-        int tipo = Leitura.LerInt();
+        int tipo = Leitura.lerInt();
 
         switch (tipo) {
         case 1:
-            veic = Uilitario.criar();
+            veic = Utilitario.criar();
             break;
         case 2:
             veic = Onibus.criar();
@@ -174,18 +172,70 @@ public class Locacao {
         case 4:
             veic = Executivo.criar();
         }
-        ;
 
         dtsaida = Calendar.getInstance();
-        dtvoltaprev = dtvoltaprev.add(DATE, Leitura.LerInt());
-        ;
+        //------------------
+        String dtPrev = Leitura.lerString();
+
+        int dia, mes, ano;
+
+        dia = Integer.parseInt(dtPrev.substring(0,3));
+        mes = Integer.parseInt(dtPrev.substring(3, 5));
+        ano = Integer.parseInt(dtPrev.substring(5));
+
+        dtvoltaprev = Calendar.getInstance();
+
+        dtvoltaprev.set(Calendar.DAY_OF_MONTH, dia);
+
+        switch(mes)
+        {
+            case 01:
+                dtvoltaprev.set(Calendar.MONTH, Calendar.JANUARY);
+                break;
+            case 02:
+            	dtvoltaprev.set(Calendar.MONTH, Calendar.FEBRUARY);
+                break;
+            case 03:
+            	dtvoltaprev.set(Calendar.MONTH, Calendar.MARCH);
+                break;
+            case 04:
+            	dtvoltaprev.set(Calendar.MONTH, Calendar.APRIL);
+                break;
+            case 05:
+            	dtvoltaprev.set(Calendar.MONTH, Calendar.MAY);
+                break;
+            case 06:
+            	dtvoltaprev.set(Calendar.MONTH, Calendar.JUNE);
+                break;
+            case 07:
+            	dtvoltaprev.set(Calendar.MONTH, Calendar.JULY);
+                break;
+            case 010:
+            	dtvoltaprev.set(Calendar.MONTH, Calendar.AUGUST);
+                break;
+            case 011:
+            	dtvoltaprev.set(Calendar.MONTH, Calendar.SEPTEMBER);
+                break;
+            case 10:
+            	dtvoltaprev.set(Calendar.MONTH, Calendar.OCTOBER);
+                break;
+            case 11:
+            	dtvoltaprev.set(Calendar.MONTH, Calendar.NOVEMBER);
+                break;
+            case 12:
+            	dtvoltaprev.set(Calendar.MONTH, Calendar.DECEMBER);
+                break;
+        }
+        //--------------
         dtvolta = Calendar.getInstance();
         kmsaida = ler.nextLong();
         kmvolta = ler.nextLong();
-        vlcaucao = Leitura.LerDouble();
-        vlloc = Leitura.LerDouble();
-
-        Locacao loc = new Locacao(locId, client, veic, dtsaida, dtvoltaprev, dtvolta, kmsaida, kmvolta, vlcaucao,
+        vlcaucao = Leitura.lerDouble();
+        vlloc = Leitura.lerDouble();
+        client = new Cliente("", null);
+        veic = new Veiculo("", "", 0, ' ', 0, 0);
+        
+        Locacao loc = new Locacao(client, veic, dtsaida, dtvoltaprev, dtvolta, kmsaida, kmvolta, vlcaucao,
                 vlloc);
         return loc;
     }
@@ -200,7 +250,7 @@ public class Locacao {
         int dias;
         double custo;
         long km;
-        dias = ChronoUnit.DAYS.between(dtLocacao.toInstant(), dtDevolucao.toInstant());
+        dias = (int) ChronoUnit.DAYS.between(dtLocacao.toInstant(), dtDevolucao.toInstant());
         km = kmDevolucao - kmLocacao;
 
         custo = veiculo.calculaCustos(dias, km) + valorLocacao + valorCaucao;
