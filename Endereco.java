@@ -85,11 +85,16 @@ public class Endereco {
         
         String rua, cep, cidade, estado;
         int numero;
-
+       
+        System.out.println("\n Digite o nome da Rua: ");
         rua = Leitura.lerString();
+        System.out.println("\n Digite o numero da Rua: ");
         numero = Leitura.lerInt();
+        System.out.println("\n Digite o CEP: ");
         cep = Leitura.lerString();
+        System.out.println("\n Digite o nome da cidade: ");
         cidade = Leitura.lerString();
+        System.out.println("\n Digite a sigla do estado: ");
         estado = Leitura.lerString();
 
         Endereco end = new Endereco(rua, numero, cep, cidade, estado);
