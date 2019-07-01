@@ -30,12 +30,19 @@ public class Executivo extends Automovel {
         double vlopc;
 
         Scanner entrada = new Scanner(System.in);
+        System.out.println("\n Digite o numero da placa: ");
         placa = Leitura.lerString();
+        System.out.println("\n Digite a cor do carro: ");
         cor = Leitura.lerString();
+        System.out.println("\n Digite o numero de portas: ");
         nroPortas = Leitura.lerInt();
+        System.out.println("\n Digite o tipo de combustível(G, A, ou D): ");
         combtipo = entrada.next().charAt(0);
+        System.out.println("\n Digite a quilometragem do carro: ");
         km = entrada.nextLong();
+        System.out.println("\n Digite o valor da diária: ");
         valorDiaria = Leitura.lerDouble();
+        System.out.println("\n Digite o valor dos opcionais: ");
         vlopc = Leitura.lerDouble();
         Executivo exec = new Executivo(placa, cor, nroPortas, combtipo, km, valorDiaria, vlopc);
         return exec;
