@@ -25,7 +25,7 @@ public class Main{
 
             case 2:
 
-                System.out.println("Digite a quantidade de locaﾃｧﾃｵes que deseja cadastrar");
+                System.out.println("Digite a quantidade de locações que deseja cadastrar");
                 Lcount = Leitura.lerInt();
                 
                 loc = new Locacao[Lcount];
