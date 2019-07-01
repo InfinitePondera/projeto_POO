@@ -13,6 +13,8 @@ public class Veiculo {
 
     // construtores
     public Veiculo(String placa, String cor, int nportas, char combustivel, long kmrodados, double valordiaria) {
+    	this.veiculoID = Utilitaria.IdVeiculo;
+    	Utilitaria.IdVeiculo++;
         this.placa = placa;
         this.cor = cor;
         this.nroPortas = nportas;
@@ -22,14 +24,6 @@ public class Veiculo {
     }
 
     // get set
-    public int getVeiculoID() {
-        return this.veiculoID;
-    }
-
-    public void setVeiculoID(int veiculoID) {
-        this.veiculoID = veiculoID;
-    }
-
     public String getPlaca() {
         return this.placa;
     }
@@ -83,7 +77,7 @@ public class Veiculo {
         double custo;
         int diferenca;
 
-        diferenca = km - (dias * 100);
+        diferenca = (int) (km - (dias * 100));
         custo = valorDiaria * dias;
 
         if (diferenca > 0) {
