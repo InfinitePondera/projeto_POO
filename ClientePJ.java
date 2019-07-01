@@ -34,12 +34,16 @@ public class ClientePJ extends Cliente {
 
         String nome, fone, cnpj, nomeMotorista;
         Endereco end;
-
+        
+        System.out.println("\n Digite o nome do cliente:");
         nome = Leitura.lerString();
+        System.out.println("\n Digite o telefone do cliente:");
         fone = Leitura.lerString();
+        System.out.println("\n Digite o CNPJ do cliente:");
         cnpj = Leitura.lerString();
-        end = Endereco.criar();
+        System.out.println("\n Digite o nome do motorista:");
         nomeMotorista = Leitura.lerString();
+        end = Endereco.criar();
 
         ClientePJ clipj = new ClientePJ(nome, fone, end, cnpj, nomeMotorista);
         return clipj;
