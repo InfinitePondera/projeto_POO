@@ -1,6 +1,8 @@
 
 package projetofinal;
 
+import java.util.Scanner;
+
 public class Onibus extends Veiculo {
     private int nroPassageiros;
     private double vlSeguroPassageiro;
@@ -54,14 +56,14 @@ public class Onibus extends Veiculo {
         boolean guia;
 
         Scanner entrada = new Scanner(System.in);
-        placa = leitura.lerString;
-        cor = leitura.lerString;
-        nroPortas = leitura.lerInt;
+        placa = Leitura.lerString();
+        cor = Leitura.lerString();
+        nroPortas = Leitura.lerInt();
         combtipo = entrada.next().charAt(0);
-        km = entrada.nextLong;
-        valorDiaria = leitura.lerDouble;
-        npassag = leitura.lerInt;
-        vlseguro = leitura.lerInt;
+        km = entrada.nextLong();
+        valorDiaria = Leitura.lerDouble();
+        npassag = Leitura.lerInt();
+        vlseguro = Leitura.lerInt();
         guia = true;
 
         Onibus onibus = new Onibus(placa, cor, nroPortas, combtipo, km, valorDiaria, npassag, vlseguro, guia);
@@ -72,7 +74,7 @@ public class Onibus extends Veiculo {
         double custo;
         int diferenca;
 
-        diferenca = km - (dias * 100);
+        diferenca = (int) (km - (dias * 100));
         custo = super.getValorDiaria() * dias;
 
         if (diferenca > 0) {
@@ -88,8 +90,6 @@ public class Onibus extends Veiculo {
     }
 
     public String toString() {
-        return super.getVeiculoID() + "|" + super.getPlaca() + "|" + super.getCor() + "|" + super.getNroPortas() + "|"
-                + super.getTipoCombustivel + "|" + super.getQuilometragem + "|" + super.getValorDiaria + "|"
-                + this.nroPassageiros + "|" + this.vlSeguroPassageiro + "|" + this.guia;
+        return this.nroPassageiros + "|" + this.vlSeguroPassageiro + "|" + this.guia;
     }
 }
