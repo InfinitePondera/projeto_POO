@@ -1,5 +1,5 @@
 package projetofinal;
-
+import java.util.Scanner;
 public class Executivo extends Automovel {
 
     private double vlOpcionais;
@@ -30,14 +30,14 @@ public class Executivo extends Automovel {
         double vlopc;
 
         Scanner entrada = new Scanner(System.in);
-        placa = leitura.lerString;
-        cor = leitura.lerString;
-        nroPortas = leitura.lerInt;
+        placa = Leitura.lerString();
+        cor = Leitura.lerString();
+        nroPortas = Leitura.lerInt();
         combtipo = entrada.next().charAt(0);
         km = entrada.nextLong();
-        valorDiaria = leitura.lerDouble;
-        vlopc = leitura.lerDouble;
-        Executivo exec = new Executivo(placa, cor, nroPortas, combtipo, km, valorDiaria, vlpopc);
+        valorDiaria = Leitura.lerDouble();
+        vlopc = Leitura.lerDouble();
+        Executivo exec = new Executivo(placa, cor, nroPortas, combtipo, km, valorDiaria, vlopc);
         return exec;
     }
 
@@ -50,8 +50,6 @@ public class Executivo extends Automovel {
     }
 
     public String toString() {
-        return super.getVeiculoID() + "|" + super.getPlaca() + "|" + super.getCor() + "|" + super.getNroPortas() + "|"
-                + super.getTipoCombustivel + "|" + super.getQuilometragem + "|" + super.getValorDiaria + "|"
-                + this.vlOpcionais;
+        return this.vlOpcionais + "|";
     }
 }
