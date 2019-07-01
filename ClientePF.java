@@ -24,9 +24,11 @@ public class ClientePF extends Cliente {
 
         String nome, fone, cpf;
         Endereco end;
-
+        System.out.println("\n Digite o nome do cliente:");
         nome = Leitura.lerString();
+        System.out.println("\n Digite o Telefone do cliente:");
         fone = Leitura.lerString();
+        System.out.println("\n Digite o CPF do cliente:");
         cpf = Leitura.lerString();
         end = Endereco.criar();
 
