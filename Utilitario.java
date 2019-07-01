@@ -43,14 +43,22 @@ public class Utilitario extends Veiculo {
         double valorDiaria;
         int capCarga;
         int nEixos;
-
+        
+        System.out.println("\n Digite o numero da placa: ");
         placa = Leitura.lerString();
+        System.out.println("\n Digite a cor do carro: ");
         cor = Leitura.lerString();
+        System.out.println("\n Digite o numero de portas: ");
         nroPortas = Leitura.lerInt();
+        System.out.println("\n Digite o tipo de combustível(G, A, ou D): ");
         combtipo = entrada.next().charAt(0);
+        System.out.println("\n Digite a quilometragem: ");
         km = entrada.nextLong();
+        System.out.println("\n Digite o valor da diária: ");
         valorDiaria = Leitura.lerDouble();
+        System.out.println("\n Digite a capacidade de carga: ");
         capCarga = Leitura.lerInt();
+        System.out.println("\n Digite o numero de eixos: ");
         nEixos = Leitura.lerInt();
 
         Utilitario util = new Utilitario(placa, cor, nroPortas, combtipo, km, valorDiaria, capCarga, nEixos);
