@@ -18,19 +18,14 @@ public class Automovel extends Veiculo {
         long km;
         double valorDiaria;
 
-        placa = leitura.lerString;
-        cor = leitura.lerString;
-        nroPortas = leitura.lerInt;
+        placa = Leitura.lerString();
+        cor = Leitura.lerString();
+        nroPortas = Leitura.lerInt();
         combtipo = entrada.next().charAt(0);
         km = entrada.nextLong();
-        valorDiaria = leitura.lerDouble;
+        valorDiaria = Leitura.lerDouble();
 
         Automovel auto = new Automovel(placa, cor, nroPortas, combtipo, km, valorDiaria);
         return auto;
-    }
-
-    public String toString() {
-        return super.getVeiculoID() + "|" + super.getPlaca() + "|" + super.getCor() + "|" + super.getNroPortas() + "|"
-                + super.getTipoCombustivel + "|" + super.getQuilometragem + "|" + super.getValorDiaria;
     }
 }
