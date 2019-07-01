@@ -1,5 +1,7 @@
 package projetofinal;
 
+import java.util.Scanner;
+
 public class Utilitario extends Veiculo {
     private int capacidadeCarga;
     private int nroEixos;
@@ -42,22 +44,20 @@ public class Utilitario extends Veiculo {
         int capCarga;
         int nEixos;
 
-        placa = leitura.lerString;
-        cor = leitura.lerString;
-        nroPortas = leitura.lerInt;
+        placa = Leitura.lerString();
+        cor = Leitura.lerString();
+        nroPortas = Leitura.lerInt();
         combtipo = entrada.next().charAt(0);
         km = entrada.nextLong();
-        valorDiaria = leitura.lerDouble;
-        capCarga = leitura.lerInt;
-        nEixos = leitura.lerInt;
+        valorDiaria = Leitura.lerDouble();
+        capCarga = Leitura.lerInt();
+        nEixos = Leitura.lerInt();
 
         Utilitario util = new Utilitario(placa, cor, nroPortas, combtipo, km, valorDiaria, capCarga, nEixos);
         return util;
     }
 
     public String toString() {
-        return super.getVeiculoID() + "|" + super.getPlaca() + "|" + super.getCor() + "|" + super.getNroPortas() + "|"
-                + super.getTipoCombustivel + "|" + super.getQuilometragem + "|" + super.getValorDiaria + "|"
-                + this.capacidadeCarga + "|" + this.nroEixos;
+        return this.capacidadeCarga + "|" + this.nroEixos;
     }
 }
